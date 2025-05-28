@@ -16,7 +16,7 @@ This project is made with different Blocks elements combined with index.html to 
 
 This webpage is deployed to Github pages
 
-- Deployment Link: 
+- Deployment Link: https://joaonada.github.io/se_project_spots/
 
 
 
