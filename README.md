@@ -18,8 +18,11 @@ This webpage is deployed to Github pages
 
 - Deployment Link: https://joaonada.github.io/se_project_spots/
 
+## Video
 
+Here is the recorded video link of this Project
 
+- https://www.loom.com/share/6de957b733ea483b897fa1b98ad1c17b?sid=6cb91dfd-860f-4613-a8d6-bfc2ece59462
 
 
 
