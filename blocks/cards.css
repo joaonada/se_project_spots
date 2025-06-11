@@ -1,7 +1,7 @@
 .cards {
-padding-top: 20px;
-padding-bottom: 40px;
-border-bottom: 1px solid #21212166;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #21212166;
 }
 
 .cards__list {
@@ -18,9 +18,9 @@ border-bottom: 1px solid #21212166;
   .cards {
     padding-bottom: 20px;
   }
+
   .cards__list {
     grid-template-columns: repeat(auto-fit, 288px);
     row-gap: 20px;
   }
-
 }

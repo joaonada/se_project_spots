@@ -22,7 +22,7 @@
   color: #212121;
   max-width: 350px;
   margin: 0 0;
-font-weight: 500;
+  font-weight: 500;
 }
 
 .card__like-button {
@@ -38,6 +38,7 @@ font-weight: 500;
   background-color: transparent;
   opacity: 40%;
 }
+
 .card__like-button:hover {
   opacity: 1;
 }
@@ -46,10 +47,12 @@ font-weight: 500;
   .card__image {
     height: 288px;
   }
+
   .card__title {
     max-width: 250px;
     font-size: 16px;
   }
+
   .card__like-button {
     width: 20px;
     height: 18px;

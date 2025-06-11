@@ -71,7 +71,7 @@
   border-radius: 8px;
   padding: 0;
   background-color: #212121;
-  color: white;
+  color: #fcf5e5;
   align-self: end;
   cursor: auto;
   cursor: pointer;
@@ -85,7 +85,6 @@
   opacity: 0.8;
 }
 
-
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
@@ -93,10 +92,10 @@
     padding-top: 20px;
   }
   .profile__avatar {
-   margin-bottom: 12px;
-   margin-right: 0;
-   height: 80px;
-   width: 80px;
+    margin-bottom: 12px;
+    margin-right: 0;
+    height: 80px;
+    width: 80px;
   }
   .profile__name {
     font-size: 20px;
@@ -116,5 +115,11 @@
     margin-left: 0;
     max-width: 288px;
     width: 100%;
+  }
+  .profile__edit-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
   }
 }
