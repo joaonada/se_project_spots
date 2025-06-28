@@ -1,6 +1,6 @@
-# Project 3: Spots 
+# Project 4: Spots 
 
-Memorable pictures
+Link & Caption
 
 ## Description
 
