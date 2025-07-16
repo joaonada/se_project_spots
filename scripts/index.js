@@ -16,7 +16,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostImageEl = newPostModal.querySelector("#card-image-input");
-// const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
+const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -24,11 +24,11 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 function closeModal(modal) {
@@ -36,23 +36,18 @@ function closeModal(modal) {
 }
 
 newPostButton.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
 
-newPostCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
-});
-
 function handleEditProfileFormSubmit(evt) {
   evt.preventDefault();
-  console.log("submitting");
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  editProfileModal.closeModal(editProfileModal);
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileFormSubmit);
@@ -61,14 +56,11 @@ function handleAddNewPost(evt) {
   evt.preventDefault();
   console.log({
     image: newPostImageEl.value,
-    
+    caption: newPostCaptionInput.value,
+    newPostForm.reset();
   });
-  newPostModal.classList.add("modal_is-opened");
-}
+  newPostModal.closeModal(newPostModal);
 
-newPostCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
-});
 
 newPostForm.addEventListener("submit", handleAddNewPost);
 
