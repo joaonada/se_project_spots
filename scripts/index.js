@@ -43,11 +43,12 @@ function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
 
+
 function handleEditProfileFormSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.closeModal(editProfileModal);
+  closeModal(editProfileModal);
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileFormSubmit);
@@ -57,10 +58,11 @@ function handleAddNewPost(evt) {
   console.log({
     image: newPostImageEl.value,
     caption: newPostCaptionInput.value,
-    newPostForm.reset();
   });
-  newPostModal.closeModal(newPostModal);
 
+    newPostForm.reset();
+  closeModal(newPostModal);
+}
 
 newPostForm.addEventListener("submit", handleAddNewPost);
 
