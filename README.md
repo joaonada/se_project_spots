@@ -1,4 +1,4 @@
-# Project 4: Spots 
+# Project 5: Spots 
 
 Link & Caption
 
@@ -10,6 +10,7 @@ This project is made with different Blocks elements combined with index.html to 
 
 * HTML
 * CSS
+* JAVASCRIPT
 * Responsive Design
 
 ## Deployment
@@ -23,12 +24,6 @@ This webpage is deployed to Github pages
 Here is the recorded video link of this Project
 
 - https://www.loom.com/share/6de957b733ea483b897fa1b98ad1c17b?sid=6cb91dfd-860f-4613-a8d6-bfc2ece59462
-
-
-
-
-
-
 
 
 ### Overview  
