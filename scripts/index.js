@@ -47,33 +47,55 @@ const newPostFormEl = newPostModal.querySelector(".modal__form");
 const newPostcaptionInputEl = newPostModal.querySelector("#card-caption-input");
 const newPostlinkInputEl = newPostModal.querySelector("#card-link-input");
 
+function openModal (modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal (modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 editProfileButton.addEventListener("click", function () {
   editProfileNameInputEl.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  //editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
+});
+
+newPostButton.addEventListener("click", function () {
+  //newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  //editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 newPostCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  //newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
+});
+
+newPostCloseButton.addEventListener("click", function () {
+  //newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
 
 editProfileFormEl.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileNameEl.textContent = nameInputEl.value;
   profileDescriptionEl.textContent = descriptionInputEl.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  //editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 newPostFormEl.addEventListener("submit", function (evt) {
   evt.preventDefault();
   console.log(captionInputEl.value);
   console.log(linkInputEl.value);
-
-  newPostModal.classList.remove("modal_is-opened");
+  //newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 });
 
 initialCards.forEach(function (item) {
