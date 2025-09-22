@@ -1,4 +1,4 @@
-# Project 5: Spots 8
+# Project 5: Final Stage Spots 8
 
 Link & Caption
 
