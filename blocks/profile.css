@@ -45,7 +45,7 @@
   opacity: 0.7;
 }
 
-.profile__edit-button {
+.profile__edit-btn {
   margin-top: auto;
   border: none;
   background-color: #fcf5e5;
@@ -60,11 +60,11 @@
   gap: 8px;
   opacity: 0.7;
 }
-.profile__edit-button:hover {
+.profile__edit-btn:hover {
   opacity: 1;
 }
 
-.profile__add-button {
+.profile__new-post-btn {
   margin: 0 0 0 auto;
   width: 157px;
   height: 52px;
@@ -81,7 +81,7 @@
   justify-content: center;
   align-items: center;
 }
-.profile__add-button:hover {
+.profile__new-post-btn:hover {
   opacity: 0.8;
 }
 
@@ -111,15 +111,14 @@
     text-align: center;
     margin-right: 0;
   }
-  .profile__add-button {
+  .profile__add-btn {
     margin-left: 0;
     max-width: 288px;
     width: 100%;
   }
-  .profile__edit-button {
+  .profile__edit-btn {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-
   }
 }
