@@ -37,9 +37,9 @@
 .modal__close {
   width: 40px;
   height: 40px;
-  background: transparent url("../images/CloseIcon.png") no-repeat;
-  block-size: auto;
-  block-size: 35px 35px;
+  background: transparent url("../images/CloseIcon.png") no-repeat center;
+  background-size: contain;
+  background-position: 0 0;
   border: none;
   position: absolute;
   top: 32px;
@@ -52,7 +52,8 @@
 }
 
 .modal__close_type_preview {
-  /* todo - style correct color for X and set up correct background image */
+  background: transparent url("../images/Icon-white\ varian3.svg") no-repeat center;
+  background-size: contain;
   top: 0;
   right: -52.5px;
 }
@@ -128,8 +129,14 @@
 }
 
 .modal__caption {
-  /* todo - style correctly */
   color: white;
+  font-size: large;
+  font-weight: 500;
+  position: absolute;
+  padding: 10px;
+  text-align: center;
+  top: 20px;
+  bottom: 10px;
 }
 
 @media screen and (max-width: 480px) {

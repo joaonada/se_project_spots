@@ -57,7 +57,7 @@ const linkInputEl = addCardFormEl.querySelector("#card-link-input");
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close");
 const previewImageEl = previewModal.querySelector(".modal__image");
-const captionModalEl = previewModalEl.querySelector(".preview-caption-modal");
+const captionModalEl = previewModal.querySelector(".preview-caption-modal");
 /* const linkImageEl = previewImageEl.querySelector(".preview-link-image"); */
 const previewTitleEl = document.querySelector(".modal__caption");
 
@@ -107,17 +107,15 @@ function closeModal(modal) {
 editProfileButton.addEventListener("click", function () {
   nameInputEl.value = profileNameEl.textContent;
   descriptionInputEl.value = profileDescriptionEl.textContent;
-  //editProfileModal.classList.add("modal_is-opened");
   openModal(editProfileModal);
 });
 
 addCardButton.addEventListener("click", function () {
-  addCardModal.classList.add("modal_is-opened");
+  /* addCardModal.classList.add("modal_is-opened"); */
   openModal(addCardModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  //editProfileModal.classList.remove("modal_is-opened");
   closeModal(editProfileModal);
 });
 
@@ -126,8 +124,7 @@ previewModalCloseBtn.addEventListener("click", function () {
 });
 
 addCardCloseBtn.addEventListener("click", function () {
-  addCardModal.classList.remove("modal_is-opened");
-  //closeModal(newPostModal);
+  closeModal(newPostModal);
 });
 
 //newPostCloseButton.addEventListener("click", function () {
@@ -139,8 +136,8 @@ editFormEl.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileNameEl.textContent = nameInputEl.value;
   profileDescriptionEl.textContent = descriptionInputEl.value;
-  editProfileModal.classList.remove("modal_is-opened");
-  //closeModal(editProfileModal);
+  // editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 addCardFormEl.addEventListener("submit", function (evt) {
@@ -155,11 +152,11 @@ addCardFormEl.addEventListener("submit", function (evt) {
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  addCardFormEl.requestFullscreen();
+  addCardFormEl;
 
-  addCardModal.classList.remove("modal_is-opened");
-  addCardFormEl.requestFullscreen();
-  //closeModal(newPostModal);
+  //addCardModal.classList.remove("modal_is-opened");
+  addCardFormEl;
+  closeModal(addCardModal);
 });
 
 initialCards.forEach(function (item) {
