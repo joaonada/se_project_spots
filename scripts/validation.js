@@ -5,7 +5,7 @@ const settings = {
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible"
-}
+};
 
 const showInputError = (formEl, inputEl, errorMsg) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
@@ -13,7 +13,7 @@ const showInputError = (formEl, inputEl, errorMsg) => {
   inputEl.classList.add("modal__input_type_error");
 };
 
-const hideInputError = (formEl, inputEl) => {
+const hideInputError = (formEl, input) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = "";
   inputEl.classList.remove("modal__input_type_error");
@@ -23,7 +23,7 @@ const checkInputValidity = (formEl, inputEl) => {
   if (!inputEl.validity.valid) {
   showInputError(formEl, inputEl, inputEl.validationMessage);
   } else {
-    hideInputError(formEl, inputEl)
+    hideInputError(formEl, inputEl);
   }
 };
 
@@ -46,10 +46,10 @@ const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
   buttonEl.classList.add(config.inactiveButtonClass);
 };
-    // OPTIONAL
+
 const resetValidation = (formEl, inputList, config) => {
   inputList.forEach((input) => {
-    hideInputError(formEl, input, config);
+    hideInputError(formEl, input);
   });
 };
 
