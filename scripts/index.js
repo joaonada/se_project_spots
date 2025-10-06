@@ -1,5 +1,3 @@
-// TODO - pass settings object to the validation functions that are called in this file
-
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -97,15 +95,8 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
-  function handleEscapeKey(evt) {
-    if (evt.key === "Escape") {
-      document.addEventListener(function () {
-        closeModal(modal);
-      })}
-  }
-}
-
 modal.classList.add("modal_is-opened");
+  }
 
 function closeModal(modal) {
 modal.classList.remove("modal_is-opened");
@@ -114,8 +105,8 @@ modal.classList.remove("modal_is-opened");
 editProfileButton.addEventListener("click", function () {
   nameInputEl.value = profileNameEl.textContent;
   descriptionInputEl.value = profileDescriptionEl.textContent;
-  // OPTIONAL
-  resetValidation(editFormEl, [nameInputEl, descriptionInputEl], config);
+
+ // resetValidation(editFormEl, [nameInputEl, descriptionInputEl], config);
   openModal(editProfileModal);
 });
 
@@ -169,8 +160,6 @@ function handleCardSubmit(evt) {
   closeModal(addCardModal);
 }
 
-// addCardFormEl.reset();
-// closeModal(addCardModal);
 
 function handleDeleteCard(evt) {
   evt.target.closest(".card").remove();
