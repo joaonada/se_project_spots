@@ -58,6 +58,24 @@ const previewImageEl = previewModal.querySelector(".modal__image");
 const captionModalEl = previewModal.querySelector(".preview-caption-modal");
 const previewTitleEl = document.querySelector(".modal__caption");
 
+const modals = document.querySelectorAll('.modal');
+modals.forEach((modal) => {
+  modal.addEventListener('click', (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_is-opened");
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
+};
+
 // CARD RELATED ELEMENTS
 const cardTemplate = document
   .querySelector("#card-template")
@@ -95,10 +113,12 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
+  document.addEventListener("keydown", handleEscapeKey);
 modal.classList.add("modal_is-opened");
   }
 
 function closeModal(modal) {
+  document.removeEventListener("keydown", handleEscapeKey);
 modal.classList.remove("modal_is-opened");
 }
 
@@ -106,7 +126,7 @@ editProfileButton.addEventListener("click", function () {
   nameInputEl.value = profileNameEl.textContent;
   descriptionInputEl.value = profileDescriptionEl.textContent;
 
- // resetValidation(editFormEl, [nameInputEl, descriptionInputEl], config);
+ resetValidation(editFormEl, [nameInputEl, descriptionInputEl], config);
   openModal(editProfileModal);
 });
 
@@ -138,18 +158,6 @@ addCardFormEl.addEventListener('submit', function(evt) {
   handleCardSubmit(evt);
 });
 
-const inputValues = {
-  name: captionInputEl.value,
-  link: linkInputEl.value,
-};
-
-function handleEditProfileSubmit(evt) {
-  evt.preventDefault();
-  profileNameEl.textContent = nameInputEl.value;
-  profileDescriptionEl.textContent = descriptionInputEl.value;
-  closeModal(editModal);
-}
-
 function handleCardSubmit(evt) {
   evt.preventDefault();
   const values = { name: captionInputEl.value, link: linkInputEl.value };
@@ -158,20 +166,6 @@ function handleCardSubmit(evt) {
   evt.target.reset();
   disableButton(addCardSubmitBtn, settings);
   closeModal(addCardModal);
-}
-
-
-function handleDeleteCard(evt) {
-  evt.target.closest(".card").remove();
-}
-
-function handleLike(evt) {
-  evt.target.classList.toggle("card__like-button_active");
-}
-
-function handleImageClick(data) {
-  previewImage.src = data.link;
-  previewImage.alt = data.name;
 }
 
 initialCards.forEach(function (item) {
