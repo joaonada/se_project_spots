@@ -1,4 +1,4 @@
-# Project 6: Final Stage Spots 9
+# Project 9: Final Stage
 
 Link & Caption
 
@@ -17,7 +17,7 @@ This project is made with different Blocks elements combined with index.html to 
 
 This webpage is deployed to Github pages
 
-- Deployment Link: https://github.com/joaonada/se_project_spots.git
+- Deployment Link: https://github.com/joaonada/se_project_spots/pulls
 ## Video
 
 Here is the recorded video link of this Project
