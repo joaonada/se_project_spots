@@ -12,6 +12,7 @@ This project is made with different Blocks elements combined with index.html to 
 - CSS
 - JAVASCRIPT
 - Responsive Design
+- WEBPACK DEV
 
 ## Deployment
 
