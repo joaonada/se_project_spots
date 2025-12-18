@@ -87,6 +87,7 @@ openModal(loading);
 api
   .getAppInfo()
   .then(([userInfo, cards]) => {
+    closeModal(loading);
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
@@ -98,7 +99,6 @@ api
   })
 
   .catch(console.error);
-closeModal(loading);
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
@@ -109,8 +109,20 @@ function getCardElement(data) {
   cardTitleEl.textContent = data.name;
 
   const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
-  cardLikeBtnEl.addEventListener("click", (evt, id) => {
-    cardLikeBtnEl.classList.toggle("card__like-button_active");
+  if (data.isLiked) {
+    cardLikeBtnEl.classList.add("card__like-button_active");
+  };
+
+  cardLikeBtnEl.addEventListener("click", () => {
+    const isCurrentlyLiked = cardLikeBtnEl.classList.contains("card__like-button_active");
+
+    api
+      .changeLikeStatus(data._id, isCurrentlyLiked)
+      .then((updatedCard) => {
+        cardLikeBtnEl.classList.toggle("card__like-button_active");
+        data.isLiked = updatedCard.isLiked;
+      })
+      .catch(console.error);
   });
 
   let cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
@@ -206,7 +218,7 @@ function handleCardSubmit(evt) {
   evt.preventDefault();
   const values = { name: captionInputEl.value, link: linkInputEl.value };
   console.log(linkInputEl.value);
-  setButtonText(submitButton, true);
+  setButtonText(addCardSubmitBtn, true);
   api
     .addCard(values)
     .then(() => {
